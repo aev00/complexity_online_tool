@@ -217,7 +217,7 @@ server <- function(input, output) {
       paste0(input$upload, "_FINAL.csv")
     },
     content = function(file) {
-      write.csv(data_complexity_features(), file)
+      write.csv(data_complexity_indices(), file)
     }
   )
   
