@@ -5,9 +5,9 @@ account: q35vkf-anna-valyogos
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 9040203
-bundleId: 7307860
+bundleId: 7307906
 url: https://q35vkf-anna-valyogos.shinyapps.io/complexity_online_tool/
-when: 1685990503.06563
-lastSyncTime: 1685990503.06564
+when: 1685991121.79727
+lastSyncTime: 1685991121.79729
 asMultiple: FALSE
 asStatic: FALSE

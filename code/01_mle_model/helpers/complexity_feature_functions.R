@@ -16,7 +16,7 @@ library(glue)
 library(purrr) # map2
 library(OneR) # bin()
 
-l <- modules::use(here("lib", "lottery_funs.R"))
+l <- modules::use(here::here("lib", "lottery_funs.R"))
 
 # Build Complexity Features ----------------------------------------------------
 build_features <- function(df, incl_tiles = FALSE, lots = c("a", "b")){

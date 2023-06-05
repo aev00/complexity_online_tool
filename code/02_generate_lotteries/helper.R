@@ -12,7 +12,7 @@ library(dplyr) # mutate()
 library(magrittr) # %>%
 library(glue)
 
-l <- modules::use(here("lib", "lottery_funs.R"))
+l <- modules::use(here::here("lib", "lottery_funs.R"))
 
 # Global Variables -------------------------------------------------------------
 nice_ps <- c(0.01, seq(0.05, 0.95, 0.05), 0.99)
