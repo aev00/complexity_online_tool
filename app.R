@@ -159,10 +159,10 @@ server <- function(input, output) {
     df = data_complexity_features()
     
     # Load features
-    x_train_ave_lasso <- readRDS(here("data", "lasso_features_ave_train_df.rds"))
+    x_train_ave_lasso <- readRDS(here::here("data", "lasso_features_ave_train_df.rds"))
     
     # Load model
-    load_fp_ave <- save_fp <- here(
+    load_fp_ave <- save_fp <- here::here(
       "data", "models",
       glue("{outcome_var}__LASSO__ave.rds")
     )
@@ -182,7 +182,10 @@ server <- function(input, output) {
     # order columns to match  ## -- TO DO: DOUBLE CHECK 
     x_lasso_ave <- x_lasso_ave[, names(x_train_ave_lasso)] %>%
       as.matrix
-    ci_ave <- predict(model_ave, x_lasso_ave, s = model_ave$lambda.1se)
+    #ci_ave <- predict(model_ave, x_lasso_ave, s = model_ave$lambda.1se) ### WHEN CALLING PREDICT IT IS CALLED FROM STATS PACKAGE, NO? IS that a problem?
+    #ci_ave <- glmnet::predict.glmnet(model_ave, x_lasso_ave, s = "lambda.1se") ## This throws an error
+    library(glmnet)
+    ci_ave <- predict(model_ave, x_lasso_ave, s = "lambda.1se") 
     
     # SAVE
     # xwalk
